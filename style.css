@@ -1,0 +1,18 @@
+
+html{
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+body {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;  
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
