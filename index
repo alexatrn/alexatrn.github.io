@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>página personal de Alejandra</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Alejandra</h1>
+    <p>
+      Página en construcción. Vuelve más tarde, gracias!
+    </p>
+  </body>
+</html>
