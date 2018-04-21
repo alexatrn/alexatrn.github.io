@@ -5,14 +5,35 @@ html{
 }
 
 body {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;  
-  font-size: 1.8rem;
-  text-align: center;
+  margin: 0;
 }
 
-h1 {
-  text-align: center;
+
+/*
+  sections style
+*/
+
+section{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: whitesmoke;
+}
+
+section#section-1{
+  background: #845ec2;
+  
+}
+section#section-2{
+  background: #d65db1;
+}
+section#section-3{
+  background: #ff6f91;
+}
+section#section-4{
+  background: #ff9671;
 }
 
