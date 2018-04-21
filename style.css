@@ -10,6 +10,35 @@ body {
 
 
 /*
+  nav style
+*/
+header{
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: flex-start;
+  font-size: 2rem;
+}
+
+header > span{
+  border: 2px solid black;
+}
+
+nav{
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 60px;
+}
+
+nav > span {
+  padding: 5px 5px;
+  border: 2px solid black;
+  margin-right:50px;
+}
+
+
+/*
   sections style
 */
 
@@ -19,7 +48,7 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 60px;
+  font-size: 6rem;
   color: whitesmoke;
 }
 
@@ -37,3 +66,29 @@ section#section-4{
   background: #ff9671;
 }
 
+
+/********************/
+/*  TABLETS  */
+@media screen and (min-width: 481px) and (max-width: 1024px){
+  nav {
+    justify-content: space-around;
+    margin: 0;
+  }
+  nav > span{
+    margin: 0;
+  }
+
+}
+
+/*  PHONES  */
+@media screen and (max-width: 480px){
+  nav{
+    margin-left: 10px;
+    flex-direction: column;
+    flex: 0;
+  }
+  nav > span {
+    margin:0;
+
+  }
+}
