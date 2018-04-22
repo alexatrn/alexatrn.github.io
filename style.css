@@ -66,8 +66,25 @@ section#section-4{
   background: #ff9671;
 }
 
+/*
+  go Top button
+*/
+div#go-top {
+  position: fixed;
+  right: 30px;
+  bottom: 15px;
+  border: 2px solid black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+}
+
+
 
 /********************/
+
 /*  TABLETS  */
 @media screen and (min-width: 481px) and (max-width: 1024px){
   nav {
