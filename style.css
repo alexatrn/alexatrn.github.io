@@ -17,10 +17,11 @@ header{
   position: fixed;
   display: flex;
   align-items: flex-start;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 header > span{
+  display:none;
   border: 2px solid black;
 }
 
@@ -35,6 +36,7 @@ nav > span {
   padding: 5px 5px;
   border: 2px solid black;
   margin-right:50px;
+  cursor: pointer;
 }
 
 
@@ -76,6 +78,7 @@ div#go-top {
   border: 2px solid black;
   width: 40px;
   height: 40px;
+  cursor: pointer;
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
