@@ -52,6 +52,8 @@ nav > span {
 section{
   width: 100vw;
   height: 100vh;
+  /* relative position, so children can have absolute position */
+  position: relative; 
   display: -webkit-flex; 
   display: flex;
   -webkit-justify-content: center;
@@ -90,6 +92,19 @@ div#go-top {
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
+}
+
+/*
+  Next section buttons
+*/
+span.next {
+  position: absolute;
+  bottom: 15px;
+  cursor: pointer;  
+  font-size: 1.8rem;
+  padding: 5px 5px;
+  border: 2px solid black;
+  color:black;
 }
 
 
