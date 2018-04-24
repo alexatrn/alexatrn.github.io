@@ -99,11 +99,15 @@ div#go-top {
   Next section buttons
 */
 span.next {
+  display: block;
+  width: 60px;
   position: absolute;
   bottom: 15px;
+  left: calc(50% - 30px);
+  padding: 5px 0;
+  text-align: center;
   cursor: pointer;  
   font-size: 1.8rem;
-  padding: 5px 5px;
   border: 2px solid black;
   color:black;
 }
