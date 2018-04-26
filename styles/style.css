@@ -216,6 +216,7 @@ span.next {
   }
 
   header.visible nav{
+    display: -webkit-flex;
     display: flex;
   }
 
