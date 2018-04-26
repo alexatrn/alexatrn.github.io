@@ -171,6 +171,7 @@ span.next {
   
   nav {
     margin: 0;
+    -webkit-flex: 1;
     flex: 1;
     -webkit-justify-content: space-around;
     justify-content: space-around;
@@ -193,6 +194,7 @@ span.next {
   header.visible {
     height: auto;
     width: 240px;
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     background: #fceaf2;
     box-shadow: 0 0 8px #737373;
@@ -200,6 +202,7 @@ span.next {
   
   header > span {
     margin: 8px;
+    -webkit-align-self: flex-start;
     align-self: flex-start;
   }
 
