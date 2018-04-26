@@ -65,18 +65,21 @@ section{
   color: whitesmoke;
 }
 
-section#section-1{
+section.s1{
   background: #845ec2;
   
 }
-section#section-2{
+section.s2{
   background: #d65db1;
 }
-section#section-3{
+section.s3{
   background: #ff6f91;
 }
-section#section-4{
+section.s4{
   background: #ff9671;
+}
+section.s5{
+  background: #1180AE;
 }
 
 /*
