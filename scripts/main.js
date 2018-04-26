@@ -9,11 +9,39 @@ var goTop = document.querySelector('#go-top');
 var currentSIndex; //values: 0,1,2...
 var isScrolling = false;
 var nextBtns = document.querySelectorAll('span.next')
+var menuBtn = document.querySelector('header > span');
+const navHeight = 56;
+
+/*
+  toggle nav visibility
+*/
+
+menuBtn.addEventListener('click', function() {
+  if(header.classList.contains('visible')){
+    header.classList.remove('visible');
+  } else {
+    header.classList.add('visible');
+  }
+});
 
 
 
+/*
+  hover nav event
+*/
+window.addEventListener('mousemove', function(e) {
+  if (e.clientY <= navHeight) {
+    header.classList.add('hovered');
+  } else {
+    header.classList.remove('hovered');
+  }
+});
 
-//filling up position sections list
+
+/*
+  filling up position sections list
+*/
+
 function fillPositions(){
   posSections = [];
   for (var k = 0; k < sections.length; k++){
@@ -26,27 +54,39 @@ function fillPositions(){
 }
 fillPositions();
 
-//resize events
+
+/*
+  resize events
+*/
+
 window.addEventListener('resize', function() {
   fillPositions();  // update positions because of resizing
   goCurrentSection(); // always endup showing a whole section
 });
 
 
+/*
+  add actions to nav buttons when they are clicked
+  scroll to the right section
+*/
 
-//add actions to nav buttons when they are clicked
-//scroll to the right section
 function linkButtons(){
   for (var k = 0; k < sections.length; k++){
     sBtns[k].addEventListener('click', function(e) {
       var index = Number(e.target.id.slice(-1))-1;
       scrollToPos(posSections[index]);
+      //remove header 'visible' class
+      header.classList.remove('visible');
     });
   }
 }
 linkButtons();
 
-//function that scrolls to a absolute position in the document
+
+/*
+  function that scrolls to a absolute position in the document
+*/
+
 function scrollToPos(position){
   window.scroll({ top: position, left: 0, behavior: 'smooth' });
   console.log("I'm scrolling to: ", position);
@@ -109,9 +149,23 @@ function setCurrentSection(){
       break;
     }
   }
+  setActiveSection();
   console.log("current position values calculated: ", currentSIndex);
 }
 setCurrentSection();
+
+/*
+  set the active class to the right section
+*/
+function setActiveSection() {
+  for (var k = 0; k < sections.length; k++){
+    if (k == currentSIndex){
+      sBtns[k].classList.add('active');
+    } else {
+      sBtns[k].classList.remove('active');
+    }
+  }
+}
 
 
 //move to next section
@@ -151,8 +205,10 @@ function goCurrentSection(){
 function linkNextBtns(){
   for(var k = 0; k < sections.length-1; k++){
     nextBtns[k].addEventListener('click', function(e) {
+      console.log(e.target.parentNode.classList[0]);
+      console.log("going to: ", Number(e.target.parentNode.classList[0].slice(-1)));
       scrollToPos(posSections[
-        Number(e.target.parentNode.id.slice(-1))
+        Number(e.target.parentNode.classList[0].slice(-1))
       ]);
     });
   }

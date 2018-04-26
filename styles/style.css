@@ -13,38 +13,85 @@ body {
   nav style
 */
 header{
-  width: 100%;
   z-index: 100;
   position: fixed;
+  height: 56px;
   display: -webkit-flex; 
   display: flex;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   font-size: 1.8rem;
+  background: transparent;
+  color: transparent;
+  /* background: #fff;
+  color: #9C27B0; */
+}
+
+header.hovered, 
+header.visible{
+  width: 100%;
+  background: #fceaf2;
+  box-shadow: 0 0 8px #737373;
 }
 
 header > span{
-  display:none;
-  border: 2px solid black;
+  /* display:none; */
+  /* flex: 1;  */
+  height: 36px;
+  width: 36px;
+  margin: 0 20px;
+  background: rgba(252, 234, 242, 0.5);
+  background-image: url("../assets/menu.svg");
+  background-size: 36px 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* color: #1B9AAA; */
+  cursor: pointer;
+  /* padding: 5px 0; */
+  /* border: 2px solid black; */
+}
+
+header.visible > span {
+  background-image: url("../assets/close.svg");
 }
 
 nav{
-  -webkit-flex:1;
-  flex: 1;
-  display: -webkit-flex; 
-  display: flex;
+  /* -webkit-flex:1; */
+  /* flex: 1; */
+  display: none;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
-  margin-left: 60px;
+  /* margin-left: 60px; */
+}
+
+header.hovered nav, 
+header.visible nav {
+  display: -webkit-flex; 
+  display: flex;
 }
 
 nav > span {
-  padding: 5px 5px;
-  border: 2px solid black;
-  margin-right:50px;
+  /* padding: 5px 5px; */
+  /* border: 2px solid black; */
+  margin-right: 20px;
+  padding: 8px 4px;
+  color: #20b5c7;
+  border-bottom: 2px solid transparent;
   cursor: pointer;
 }
 
+
+nav > span:hover {
+  border-bottom: 2px solid #20b5c7;
+}
+
+nav > span.active{
+  color: #1B9AAA;
+  text-shadow: 1px 1px 1px#1B9AAA;
+  border-bottom: 2px solid #1B9AAA;
+}
 
 /*
   sections style
@@ -120,11 +167,13 @@ span.next {
 /********************/
 
 /*  TABLETS  */
-@media screen and (min-width: 481px) and (max-width: 1024px){
+@media screen and (min-width: 561px) and (max-width: 1024px){
+  
   nav {
+    margin: 0;
+    flex: 1;
     -webkit-justify-content: space-around;
     justify-content: space-around;
-    margin: 0;
   }
   nav > span{
     margin: 0;
@@ -133,16 +182,62 @@ span.next {
 }
 
 /*  PHONES  */
-@media screen and (max-width: 480px){
+@media screen and (max-width: 560px){
+  header.hovered{
+    width: auto;
+    background: transparent;
+    color: transparent;
+    box-shadow: none;
+  }
+
+  header.visible {
+    height: auto;
+    width: 240px;
+    justify-content: space-between;
+    background: #fceaf2;
+    box-shadow: 0 0 8px #737373;
+  }
+  
+  header > span {
+    margin: 8px;
+    align-self: flex-start;
+  }
+
+  header.hovered nav{
+    display: none;
+  }
+
   nav{
-    margin-left: 10px;
+    margin: 0 20px 16px 8px;
     -webkit-flex-direction: column;
     flex-direction: column;
     -webkit-flex: none;
     flex: none;
   }
+
+  header.visible nav{
+    display: flex;
+  }
+
   nav > span {
     margin:0;
-
+    margin: 8px 0;
+    padding-right: 16px;
+    text-align: right;
+    line-height: 2;
+    border: none;
+    border-right: 3px solid transparent;
+    /* border: 1px solid black; */
   }
+
+  nav > span:hover {
+    border: none;
+    border-right: 3px solid #20b5c7;
+  }
+  
+  nav > span.active{
+    border: none;
+    border-right: 3px solid #1B9AAA;
+  }
+
 }
