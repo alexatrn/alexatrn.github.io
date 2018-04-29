@@ -72,7 +72,8 @@ fillPositions();
 
 window.addEventListener('resize', function() {
   setSecHeight();
-  fillPositions();  // update positions because of resizing
+  setTimeout(fillPositions, 500);
+  // fillPositions();  // update positions because of resizing
   // goCurrentSection();//commented out because of annoying displacement when url bar hides in mobile browsers // always endup showing a whole section
 });
 
@@ -101,7 +102,7 @@ linkButtons();
 
 function scrollToPos(position){
   window.scroll({ top: position, left: 0, behavior: 'smooth' });
-  console.log("I'm scrolling to: ", position);
+  // console.log("I'm scrolling to: ", position);
 }
 
 
@@ -115,7 +116,7 @@ goTop.addEventListener('click', function() {
 window.addEventListener('wheel', function (e) {
   e.preventDefault();
   e.stopPropagation();
-  console.log('wheel scrolled');
+  // console.log('wheel scrolled');
   if (isScrolling){
     // avoid executing multiple times on one wheel action
     return;
