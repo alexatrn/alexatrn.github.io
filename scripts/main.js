@@ -73,7 +73,7 @@ fillPositions();
 window.addEventListener('resize', function() {
   setSecHeight();
   fillPositions();  // update positions because of resizing
-  goCurrentSection(); // always endup showing a whole section
+  // goCurrentSection();//commented out because of annoying displacement when url bar hides in mobile browsers // always endup showing a whole section
 });
 
 
