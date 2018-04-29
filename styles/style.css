@@ -98,8 +98,8 @@ nav > span.active{
 */
 
 section{
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  /* height: 100%;  */
   /* relative position, so children can have absolute position */
   position: relative; 
   display: -webkit-flex; 

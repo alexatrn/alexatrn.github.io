@@ -13,6 +13,17 @@ var menuBtn = document.querySelector('header > span');
 const navHeight = 56;
 
 /*
+  adjust sections width
+*/
+function setSecHeight() {
+  for (var k = 0; k < sections.length; k++){
+    sections[k].style.height = window.innerHeight+'px';
+  }
+}
+setSecHeight();
+
+
+/*
   toggle nav visibility
 */
 
@@ -60,6 +71,7 @@ fillPositions();
 */
 
 window.addEventListener('resize', function() {
+  setSecHeight();
   fillPositions();  // update positions because of resizing
   goCurrentSection(); // always endup showing a whole section
 });
