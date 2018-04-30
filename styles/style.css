@@ -102,26 +102,64 @@ section{
   transition: height 0.5s ease-in;
   /* relative position, so children can have absolute position */
   position: relative; 
-  display: -webkit-flex; 
+  /* display: -webkit-flex; 
   display: flex;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-align-items: center;
-  align-items: center;
-  font-size: 6rem;
+  align-items: center; */
   color: whitesmoke;
 }
 
+section .wrap{
+  box-sizing: border-box;
+  position: absolute;
+  padding: 0 2rem;
+  max-width: 600px;
+  /* 60px = top border next button, 56px = height header*/
+  max-height: calc(100% - 60px - 56px - 8px);
+}
+section p {
+  font-family: sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+section h1{
+  font-size: 2.4rem;
+}
+
 section.s1{
-  background: #845ec2;
+  /* background: #845ec2; */
+  background: url("../assets/bg-01.jpg") no-repeat 60% center;
   
 }
+section.s1 .wrap{
+  top: 56px;
+  left: calc(50% - 22px);
+  margin: 8px 8px 0 0;
+  background: rgba(0,0,0,0.3);
+}
+
 section.s2{
-  background: #d65db1;
+  background: url("../assets/bg-02.jpg") no-repeat 60% center;
 }
+section.s2 .wrap{
+  top: 56px;
+  right: calc(50% - 22px);
+  margin: 8px 0 0 8px;
+  background: rgba(0,0,0,0.5);
+}
+
 section.s3{
-  background: #ff6f91;
+  background: url("../assets/bg-03.jpg") no-repeat 60% center;
 }
+section.s3 .wrap{
+  top: 56px;
+  right: calc(50% - 300px);
+  background: rgba(0,0,0,0.3);
+}
+
 section.s4{
   background: #ff9671;
 }
@@ -167,8 +205,9 @@ span.next {
   text-align: center;
   cursor: pointer;  
   font-size: 1.8rem;
-  border: 2px solid black;
-  color:black;
+  border: 2px solid whitesmoke;
+  color:whitesmoke;
+  background: rgba(0,0,0,0.4);
 }
 
 
@@ -190,6 +229,25 @@ span.next {
     margin: 0;
   }
 
+  /* section content wrappers */
+  section.s1 .wrap{
+    left: auto;
+    right: 0;
+    margin: 8px 8px 0;
+  }
+  section.s2 .wrap{
+    right: auto;
+    left: 0;
+    margin: 8px 8px 0;
+  }
+  section.s3 .wrap{
+    margin: 8px 0 0;
+    width: 600px;
+    max-width: calc(100% - 16px);
+    right: 50%;
+    transform: translate(calc(50%));
+  }
+  
 }
 
 /*  PHONES  */
@@ -237,4 +295,12 @@ span.next {
     border-right: 3px solid #1B9AAA;
   }
 
+  /* section content wrappers */
+  section.s .wrap{
+    left: auto;
+    right: auto;
+    margin: 0 8px 0;
+    max-width: 100%;
+    font-size: 10px;
+  }
 }
