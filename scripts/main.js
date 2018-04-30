@@ -12,6 +12,16 @@ var nextBtns = document.querySelectorAll('span.next')
 var menuBtn = document.querySelector('#menu-button');
 const navHeight = 56;
 
+
+/*
+  actions when document finish loading as a whole
+*/
+window.addEventListener('load', function() {
+  console.log('all has finished loading');
+  setSecHeight();
+  fillPositions();
+});
+
 /*
   adjust sections width
 */
