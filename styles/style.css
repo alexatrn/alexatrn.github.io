@@ -188,14 +188,16 @@ div#go-top {
   position: fixed;
   right: 30px;
   bottom: 16px;
-  border: 2px solid black;
+  border: 2px solid transparent;
   width: 40px;
   height: 40px;
   cursor: pointer;
   border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-  background: pink;
+  background: rgba(142, 184, 185, 0.8);
+  background-image: url("../assets/arrow-upwards.svg");
+  background-size: 44px 40px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 div#go-top.visible{
   visibility: visible;
@@ -208,17 +210,22 @@ div#go-top.visible{
 span.next {
   display: block;
   width: 44px;
-  height: 24px;
+  /* height: 24px; */
+  height: 25px;
   position: absolute;
   bottom: 20px;
   left: calc(50% - 22px);
-  padding: 5px 0;
-  text-align: center;
   cursor: pointer;  
+  padding: 5px 0;
+  /* text-align: center;
   font-size: 1.8rem;
   border: 2px solid whitesmoke;
   color:whitesmoke;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.4); */
+  background-image: url("../assets/arrow-down.svg");
+  background-size: 44px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 
