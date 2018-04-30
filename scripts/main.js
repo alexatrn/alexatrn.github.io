@@ -28,6 +28,7 @@ window.addEventListener('load', function() {
   adjust sections width
 */
 function setSecHeight() {
+  console.log("setting sections height");
   for (var k = 0; k < sections.length; k++){
     sections[k].style.height = window.innerHeight+'px';
     console.log('height section: ', k, ' set to ', window.innerHeight);
