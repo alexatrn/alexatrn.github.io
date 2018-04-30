@@ -26,7 +26,7 @@ header{
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
   font-size: 1.8rem;
-  background: #fceaf2;
+  background: #8EB8B9;
   box-shadow: 0 0 8px #737373;
   /* background: #fff;
   color: #9C27B0; */
@@ -46,7 +46,7 @@ header.visible{
   left: 10px;
   height: 36px;
   width: 36px;
-  background: rgba(252, 234, 242, 0.5);
+  background: rgba(142, 184, 185, 0.8);
   background-image: url("../assets/menu.svg");
   background-size: 36px 36px;
   background-repeat: no-repeat;
@@ -76,20 +76,21 @@ nav > span {
   /* border: 2px solid black; */
   margin-right: 20px;
   padding: 8px 4px;
-  color: #20b5c7;
+  color: #ededf0;
   border-bottom: 2px solid transparent;
+  font-variant: small-caps;
   cursor: pointer;
 }
 
 
 nav > span:hover {
-  border-bottom: 2px solid #20b5c7;
+  border-bottom: 2px dotted #ededf0;
 }
 
 nav > span.active{
-  color: #1B9AAA;
-  text-shadow: 1px 1px 1px#1B9AAA;
-  border-bottom: 2px solid #1B9AAA;
+  color: #fff;
+  text-shadow: 0 0 1px #f9f9fa;
+  border-bottom: 2px solid #fff;
 }
 
 /*
@@ -114,6 +115,7 @@ section{
 section .wrap{
   box-sizing: border-box;
   position: absolute;
+  margin: 8px 8px 0;
   padding: 0 2rem;
   max-width: 600px;
   /* 60px = top border next button, 56px = height header*/
@@ -137,8 +139,11 @@ section.s1{
 section.s1 .wrap{
   top: 56px;
   left: calc(50% - 22px);
-  margin: 8px 8px 0 0;
-  background: rgba(0,0,0,0.3);
+  /* margin: 8px 8px 0 0; */
+  /* background: rgba(0,0,0,0.3); */
+  /* background: rgba(124, 96, 50, 0.4); */
+  background: rgba(255, 255, 241, 0.50);
+  color: #0c0c0d;
 }
 
 section.s2{
@@ -147,8 +152,12 @@ section.s2{
 section.s2 .wrap{
   top: 56px;
   right: calc(50% - 22px);
-  margin: 8px 0 0 8px;
-  background: rgba(0,0,0,0.5);
+  /* margin: 8px 0 0 8px; */
+  /* background: rgba(0,0,0,0.5); */
+  /* background: rgba(106, 136, 130, 0.8); */
+  /* background: rgba(124, 96, 50, 0.8); */
+  background: rgba(255, 255, 241, 0.85);
+  color: #0c0c0d;
 }
 
 section.s3{
@@ -157,7 +166,9 @@ section.s3{
 section.s3 .wrap{
   top: 56px;
   right: calc(50% - 300px);
-  background: rgba(0,0,0,0.3);
+  /* background: rgba(0,0,0,0.3); */
+  background: rgba(255, 255, 241, 0.75);
+  color: #0c0c0d;
 }
 
 section.s4{
@@ -287,12 +298,12 @@ span.next {
 
   nav > span:hover {
     border: none;
-    border-right: 3px solid #20b5c7;
+    border-right: 3px dotted #ededf0;
   }
   
   nav > span.active{
     border: none;
-    border-right: 3px solid #1B9AAA;
+    border-right: 3px solid #fff;
   }
 
   /* section content wrappers */
