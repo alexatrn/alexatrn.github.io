@@ -338,3 +338,19 @@ span.next {
     font-size: 10px;
   }
 }
+
+
+/*
+  Debugger
+*/
+div.debugger{
+  z-index: 5000;
+  position: fixed;
+  /* top: 0;
+  left: 0; */
+  width: 380px;
+  height: 600px;
+  overflow: auto;
+  /* margin: 0 auto; */
+  background: rgba(0,0,0,0.8);
+}

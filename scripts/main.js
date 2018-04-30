@@ -30,6 +30,7 @@ window.addEventListener('load', function() {
 function setSecHeight() {
   for (var k = 0; k < sections.length; k++){
     sections[k].style.height = window.innerHeight+'px';
+    console.log('height section: ', k, ' set to ', window.innerHeight);
   }
 }
 setSecHeight();
@@ -85,8 +86,9 @@ fillPositions();
 */
 
 window.addEventListener('resize', function() {
+  console.log('page has been resized');
   setSecHeight();
-  setTimeout(fillPositions, 1000);
+  setTimeout(fillPositions, 600);
   // fillPositions();  // update positions because of resizing
   // goCurrentSection();//commented out because of annoying displacement when url bar hides in mobile browsers // always endup showing a whole section
 });
