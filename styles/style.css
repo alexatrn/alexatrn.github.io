@@ -202,6 +202,8 @@ span.next {
     top: 0;
     left: -248px; /* because of shadow*/
     transition: left 0.4s ease-out;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
   }
 
   header.visible{
@@ -211,7 +213,7 @@ span.next {
   nav{
     margin: 0 20px 16px 60px;
     -webkit-flex-direction: column;
-    flex-direction: column;
+    flex-direction: column;;
   }
 
   nav > span {
@@ -219,7 +221,7 @@ span.next {
     margin: 8px 0;
     padding-right: 16px;
     text-align: right;
-    line-height: 2;
+    line-height: 1.5;
     border: none;
     border-right: 3px solid transparent;
     /* border: 1px solid black; */
