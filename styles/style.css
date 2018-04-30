@@ -16,7 +16,11 @@ header{
   z-index: 100;
   position: fixed;
   height: 56px;
-  display: none;
+  width: 100%;
+  top: -64px; /*because of shadow*/
+  transition: top 0.4s ease-out;
+  display: -webkit-flex; 
+  display: flex;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: end;
@@ -30,10 +34,7 @@ header{
 
 header.hovered, 
 header.visible{
-  width: 100%;
-  display: -webkit-flex; 
-  display: flex;
-  
+  top: 0;
 }
 
 #menu-button{
@@ -193,15 +194,18 @@ span.next {
 
 /*  PHONES  */
 @media screen and (max-width: 560px){
-  header.hovered {
-    display: none;
+  header {
+    width: 240px;
+    height: auto;
+    display: -webkit-flex; 
+    display: flex;
+    top: 0;
+    left: -248px; /* because of shadow*/
+    transition: left 0.4s ease-out;
   }
 
   header.visible{
-    height: auto;
-    width: 240px;
-    display: -webkit-flex; 
-    display: flex;
+    left: 0;
   }
 
   nav{
