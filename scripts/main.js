@@ -20,6 +20,8 @@ window.addEventListener('load', function() {
   console.log('all has finished loading');
   setSecHeight();
   fillPositions();
+  goCurrentSection();
+
 });
 
 /*
@@ -84,7 +86,7 @@ fillPositions();
 
 window.addEventListener('resize', function() {
   setSecHeight();
-  setTimeout(fillPositions, 600);
+  setTimeout(fillPositions, 1000);
   // fillPositions();  // update positions because of resizing
   // goCurrentSection();//commented out because of annoying displacement when url bar hides in mobile browsers // always endup showing a whole section
 });
