@@ -75,7 +75,7 @@ function fillPositions(){
     var section = sections[k];
     // var position = section.getBoundingClientRect().top + window.scrollY;
     //trying a different approach:
-    var position = section.getBoundingClientRect().height*(k);
+    var position = window.innerHeight*(k);
     posSections.push(position);
   }
   console.log('positions updated: ', posSections);
