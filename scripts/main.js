@@ -230,10 +230,10 @@ function goCurrentSection(){
 function linkNextBtns(){
   for(var k = 0; k < sections.length-1; k++){
     nextBtns[k].addEventListener('click', function(e) {
-      console.log(e.target.parentNode.classList[0]);
-      console.log("going to: ", Number(e.target.parentNode.classList[0].slice(-1)));
+      console.log(e.target.parentNode.classList[1]);
+      console.log("going to: ", Number(e.target.parentNode.classList[1].slice(-1)));
       scrollToPos(posSections[
-        Number(e.target.parentNode.classList[0].slice(-1))
+        Number(e.target.parentNode.classList[1].slice(-1))
       ]);
     });
   }
