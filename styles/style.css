@@ -16,15 +16,14 @@ header{
   z-index: 100;
   position: fixed;
   height: 56px;
-  display: -webkit-flex; 
-  display: flex;
+  display: none;
   -webkit-align-items: center;
   align-items: center;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+  -webkit-justify-content: end;
+  justify-content: end;
   font-size: 1.8rem;
-  background: transparent;
-  color: transparent;
+  background: #fceaf2;
+  box-shadow: 0 0 8px #737373;
   /* background: #fff;
   color: #9C27B0; */
 }
@@ -32,16 +31,20 @@ header{
 header.hovered, 
 header.visible{
   width: 100%;
-  background: #fceaf2;
-  box-shadow: 0 0 8px #737373;
+  display: -webkit-flex; 
+  display: flex;
+  
 }
 
-header > span{
+#menu-button{
   /* display:none; */
   /* flex: 1;  */
+  position: fixed;
+  z-index: 110;
+  top: 10px;
+  left: 10px;
   height: 36px;
   width: 36px;
-  margin: 0 20px;
   background: rgba(252, 234, 242, 0.5);
   background-image: url("../assets/menu.svg");
   background-size: 36px 36px;
@@ -53,23 +56,18 @@ header > span{
   /* border: 2px solid black; */
 }
 
-header.visible > span {
+#menu-button.pinned {
   background-image: url("../assets/close.svg");
 }
 
 nav{
   /* -webkit-flex:1; */
   /* flex: 1; */
-  display: none;
+  display: -webkit-flex; 
+  display: flex;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
   /* margin-left: 60px; */
-}
-
-header.hovered nav, 
-header.visible nav {
-  display: -webkit-flex; 
-  display: flex;
 }
 
 nav > span {
@@ -134,9 +132,12 @@ section.s5{
   go Top button
 */
 div#go-top {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
   position: fixed;
   right: 30px;
-  bottom: 15px;
+  bottom: 16px;
   border: 2px solid black;
   width: 40px;
   height: 40px;
@@ -144,6 +145,11 @@ div#go-top {
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
+  background: pink;
+}
+div#go-top.visible{
+  visibility: visible;
+  opacity: 1;
 }
 
 /*
@@ -151,10 +157,11 @@ div#go-top {
 */
 span.next {
   display: block;
-  width: 60px;
+  width: 44px;
+  height: 24px;
   position: absolute;
-  bottom: 15px;
-  left: calc(50% - 30px);
+  bottom: 20px;
+  left: calc(50% - 22px);
   padding: 5px 0;
   text-align: center;
   cursor: pointer;  
@@ -172,6 +179,7 @@ span.next {
   
   nav {
     margin: 0;
+    margin-left: 50px;
     -webkit-flex: 1;
     flex: 1;
     -webkit-justify-content: space-around;
@@ -185,43 +193,21 @@ span.next {
 
 /*  PHONES  */
 @media screen and (max-width: 560px){
-  header.hovered{
-    width: auto;
-    background: transparent;
-    color: transparent;
-    box-shadow: none;
-  }
-
-  header.visible {
-    height: auto;
-    width: 240px;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    background: #fceaf2;
-    box-shadow: 0 0 8px #737373;
-  }
-  
-  header > span {
-    margin: 8px;
-    -webkit-align-self: flex-start;
-    align-self: flex-start;
-  }
-
-  header.hovered nav{
+  header.hovered {
     display: none;
   }
 
-  nav{
-    margin: 0 20px 16px 8px;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex: none;
-    flex: none;
+  header.visible{
+    height: auto;
+    width: 240px;
+    display: -webkit-flex; 
+    display: flex;
   }
 
-  header.visible nav{
-    display: -webkit-flex;
-    display: flex;
+  nav{
+    margin: 0 20px 16px 60px;
+    -webkit-flex-direction: column;
+    flex-direction: column;
   }
 
   nav > span {

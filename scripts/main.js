@@ -9,7 +9,7 @@ var goTop = document.querySelector('#go-top');
 var currentSIndex; //values: 0,1,2...
 var isScrolling = false;
 var nextBtns = document.querySelectorAll('span.next')
-var menuBtn = document.querySelector('header > span');
+var menuBtn = document.querySelector('#menu-button');
 const navHeight = 56;
 
 /*
@@ -30,8 +30,10 @@ setSecHeight();
 menuBtn.addEventListener('click', function() {
   if(header.classList.contains('visible')){
     header.classList.remove('visible');
+    menuBtn.classList.remove('pinned');
   } else {
     header.classList.add('visible');
+    menuBtn.classList.add('pinned');
   }
 });
 
@@ -90,6 +92,7 @@ function linkButtons(){
       scrollToPos(posSections[index]);
       //remove header 'visible' class
       header.classList.remove('visible');
+      menuBtn.classList.remove('pinned');
     });
   }
 }
@@ -148,9 +151,18 @@ window.addEventListener('wheel', function (e) {
 //add action when scrolling 
 window.addEventListener('scroll', function() {
  
+  revealGoTop();
   setCurrentSection();
 });
 
+//reveal or hide the Go-top button
+function revealGoTop(){
+  if(window.scrollY !== 0){
+    goTop.classList.add('visible');
+  } else {
+    goTop.classList.remove('visible');
+  }
+}
 
 // // values to calculate when document loads
 function setCurrentSection(){
@@ -163,7 +175,7 @@ function setCurrentSection(){
     }
   }
   setActiveSection();
-  console.log("current position values calculated: ", currentSIndex);
+  // console.log("current position values calculated: ", currentSIndex);
 }
 setCurrentSection();
 
